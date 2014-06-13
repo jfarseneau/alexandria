@@ -16,7 +16,6 @@ module.exports = (grunt) ->
           "**"
           "!**/*.styl"
           "!**/*.coffee"
-          "!**/*.jade"
         ]
         dest: "build"
         expand: true
@@ -84,21 +83,6 @@ module.exports = (grunt) ->
           "build/application.js": ["build/**/*.js"]
 
 
-    # Templating
-    jade:
-      compile:
-        options:
-          data: {}
-
-        files: [
-          expand: true
-          cwd: "source"
-          src: ["**/*.jade"]
-          dest: "build"
-          ext: ".html"
-        ]
-
-
     # Watch
     watch:
       options:
@@ -112,29 +96,13 @@ module.exports = (grunt) ->
         files: "source/**/*.coffee"
         tasks: ["scripts"]
 
-      jade:
-        files: "source/**/*.jade"
-        tasks: ["jade"]
-
       copy:
         files: [
           "source/**"
           "!source/**/*.styl"
           "!source/**/*.coffee"
-          "!source/**/*.jade"
         ]
         tasks: ["copy"]
-
-
-    # Dev server
-    express:
-      server:
-        options:
-          port: 4000
-          bases: ["build"]
-          hostname: "0.0.0.0"
-          livereload: true
-
 
   # // load the tasks
   grunt.loadNpmTasks "grunt-contrib-copy"
@@ -144,9 +112,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-uglify"
-  grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-watch"
-  grunt.loadNpmTasks "grunt-express"
 
   # define the tasks
   grunt.registerTask "stylesheets", "Compiles the stylesheets.", [
@@ -165,12 +131,9 @@ module.exports = (grunt) ->
     "copy"
     "stylesheets"
     "scripts"
-    "jade"
   ]
-  grunt.registerTask "default", "Watches the project for changes, automatically builds them and runs a server.", [
+  grunt.registerTask "default", "Watches the project for changes and automatically builds them.", [
     "build"
-    "express"
     "watch"
   ]
   return
-
