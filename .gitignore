@@ -1,3 +1,6 @@
+# Mac OS X stuff
+.DS_Store
+
 # Compiled files
 build
 
