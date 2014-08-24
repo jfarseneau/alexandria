@@ -1,7 +1,7 @@
 {
   "name": "alexandria",
   "version": "0.0.0",
-  "description": "An OPDS server for ebooks",
+  "description": "A self-hosted, Node-powered ebook library and OPDS server",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +13,7 @@
   "author": "Jean-Francois Arseneau",
   "license": "WTFPL",
   "dependencies": {
+    "dotenv": "^0.2.8",
     "express": "^4.4.3",
     "grunt": "0.x.x",
     "grunt-autoprefixer": "0.2.x",
