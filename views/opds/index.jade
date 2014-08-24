@@ -1,0 +1,18 @@
+doctype xml
+feed(xmlns:dc="http://purl.org/dc/terms/" xmlns:opds="http://opds-spec.org/2010/catalog" xmlns="http://www.w3.org/2005/Atom")
+  title Alexandria Library
+  subtitle Books in your library
+  author
+    name Alexandria
+    uri http://github.com/TheJF/alexandria
+  id urn:alexandria:main
+  icon /favicon.png
+  updated 2014-05-12T22:00:00+00:00
+  link(href="/opds/search/{searchTerms}" type="application/atom+xml" rel="search" title="Search")
+  link(href="/opds" type="application/atom+xml;type=feed;profile=opds-catalog" rel="start")
+  entry
+    title By Newest
+    id alexandria-navcatalog:5ca994e1f74679d1ff943309d26c7dea85e822c9
+    updated 2014-05-12T22:00:00+00:00
+    content(type="text") Books sorted by Date
+    link(href="/opds/navcatalog/4f6e6577657374" type="application/atom+xml;type=feed;profile=opds-catalog")
