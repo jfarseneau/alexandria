@@ -6,3 +6,6 @@ build
 
 # Node packages
 node_modules
+
+# Dotenv
+.env
