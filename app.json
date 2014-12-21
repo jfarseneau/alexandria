@@ -1,0 +1,10 @@
+{
+  "name": "Alexandria",
+  "description": "A self-hosted, Node-powered ebook library and OPDS server",
+  "keywords": [
+    "ebooks",
+    "opds"
+  ],
+  "addons": [],
+  "env": {}
+}
